@@ -4,6 +4,7 @@
 1. Download this repo:  
 
 <code>git clone https://github.com/dmitrykhrabroff/emotion_filter-and-recognition.git
+  
 2. Install the dependencies:
 
 <code>pip install -r requirements.txt</code>
