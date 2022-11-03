@@ -1,7 +1,7 @@
 import cv2
 import math
 import numpy as np
-
+import base_utils as utils
 
 def landmarksDetection(img, landmarks):
     img_height, img_width= img.shape[:2]
@@ -16,12 +16,7 @@ def euclaideanDistance(point, point1):
     return distance
 
 # Blinking Ratio
-def isOpen(landmarks, *args):
-
-    p_right = landmarks[args[0]]
-    p_left = landmarks[args[2]]
-    p_top = landmarks[args[3]]
-    p_bottom = landmarks[args[1]]
+def isOpen(p_right, p_left, p_top, p_bottom):
 
     hDistance = euclaideanDistance(p_right, p_left)
     vDistance = euclaideanDistance(p_top, p_bottom)
@@ -29,7 +24,6 @@ def isOpen(landmarks, *args):
         return 0
     Ratio = hDistance/vDistance
     return Ratio
-
 
 
 def rotateImage(img, angle, scale=1):
